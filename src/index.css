@@ -15,11 +15,13 @@
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
   --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
   /*--body-font: 'Poppins', sans-serif;*/
 
   /* .5rem = 8px, 1rem = 16px 1.5rem = 24px... */
-  --big-font-size: 2rem;
+  --big-font-size: 1.9rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1.125rem;
@@ -58,6 +60,35 @@
       --small--font-size: .875rem;
       --smaller--font-size: .813rem;
     }
+}
+
+/* -- Variables Dark theme -- */
+body.dark-theme{
+  --first-color-second: hsl(var(--hue-color), 30%, 8%);
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+}
+
+/* -- Button Dark/Light -- */
+.nav__btns{
+  display: flex;
+  align-items: center;
+}
+
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  margin-right: var(--mb-1);
+  cursor: pointer;
+}
+
+.change-theme:hover{
+  color: var(--first-color);
 }
 
 /* -- BASE -- */
@@ -247,6 +278,65 @@ img{
   padding-top: 3.5rem;
   align-items: center;
 }
+
+.home__info__center{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------------------- typing animate ------------------------------------------------------------ */
+.typing.animate {
+  width: 20ch;
+  border-right: 0.1em solid var(--text-color);
+  animation: type 2.5s steps(20), writer 1s infinite alternate, delete 1.5s steps(18) 2.8s forwards, type2 1.5s steps(9) 4.5s forwards;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.typing.animate::before { 
+  content: "Hi, I'm your best option. ";
+  animation: type2 1.5s steps(9) 4.5s forwards;
+}
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20ch;
+  }
+}
+
+@keyframes type2 {
+  from {
+    width: 5.4ch;
+    content: "Hi, I'm Héctor. "
+  }
+  to {
+    width: 12ch;
+    content: "Hi, I'm Héctor. "
+  }
+}
+
+@keyframes writer {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes delete {
+  from {
+    width: 20ch;
+  }
+  to {
+    width: 5.4ch;
+  }
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------- */
 
 .home__social{
   display: grid;
@@ -862,3 +952,173 @@ img{
   outline: none;
   padding: .25rem .5rem .5rem 0;
 }
+
+/* -- FOOTER -- */
+.footer{
+  padding-top: 2rem;
+}
+
+.footer__container{
+  row-gap: 3.5rem;
+}
+
+.footer__bg{
+  background-color: var(--first-color-second);
+  padding: 2rem 0 3rem;
+}
+
+.footer__title{
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.footer__subtitle{
+  font-size: var(--small-font-size);  
+}
+
+.footer__links{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.footer__link:hover{
+  color: var(--first-color-lighter);
+}
+
+.footer__social{
+  font-size: 1.25rem;
+  margin-right: var(--mb-1-5);
+}
+
+.footer__social:hover{
+  color: var(--first-color-lighter);
+}
+
+.footer__copy{
+  font-size: var(--small--font-size);
+  text-align: center;
+  color: var(--text-color-light);
+  margin-top: var(--mb-3);
+}
+
+.footer__title,
+.footer__subtitle,
+.footer__link,
+.footer__social{
+    color: #fff;
+}
+
+/* Active Link */
+.active-link{
+    color: var(--first-color);
+}
+
+/* Change background header */
+.scroll-header{
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+}
+
+/* Scroll Up */
+.scrollup{
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    background-color: var(--first-color);
+    opacity: .8;
+    padding: 0 .3rem;
+    border-radius: .4rem;
+    z-index: var(--z-tooltip);
+    transition: .4s;
+}
+
+.scrollup:hover{
+    background-color: var(--first-color-alt);
+}
+
+.scrollup__icon{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Show Scroll */
+.show-scroll{
+    bottom: 5rem;
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar{
+  width: .60rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--scroll-thumb-color);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: var(--text-color-light);
+}
+
+/* Maquina de escribir */
+
+
+/* -- MEDIA QUERIES -- */
+/* Small devices */
+@media screen and (max-width: 350px){
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+
+  .nav__menu{
+    padding: 2rem .25rem 4rem;
+  }
+  .nav__list{
+    column-gap: 0;
+  }
+
+  .home__content{
+    grid-template-columns: .25fr 3fr;
+  }
+  .home__blob{
+    width: 180px;
+  } 
+
+  .skills__title{
+    font-size: var(--normal-font-size);
+  }
+
+  .qualification__data{
+    gap: .5rem;
+  }
+
+  .services__container{
+    grid-template-columns: max-content;
+    justify-content: center;
+  }
+  .services__content{
+    padding-right: 3.5rem;
+  }
+  .services__modal{
+    padding: 0 .5rem;
+  }
+
+  .project__img{
+    width: 200px;
+  }
+
+  .testimonial__data,
+  .testimonial__header{
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial__img{
+    margin-right: 0;
+    margin-bottom: var(--mb-0-25);
+  }
+}
+
+/* Medium devices */
