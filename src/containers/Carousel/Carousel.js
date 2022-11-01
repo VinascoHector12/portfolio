@@ -34,7 +34,7 @@ function Carousel() {
                         <div class="portfolio__data">
                             <h3 class="portfolio__title">Modern Website</h3>
                             <p class="portfolio__description">Website adaptable to all device, with ui component and animated interactions.</p>
-                            <a href="#" class="button button--flex button--small portfolio__button">
+                            <a href="/#" class="button button--flex button--small portfolio__button">
                             Demo
                             <i class="uil uil-arrow-right button__icon"></i>
                             </a>
