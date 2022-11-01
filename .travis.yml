@@ -1,0 +1,21 @@
+language: node_js #establecer lenguaje
+cache:
+  directories:
+    - ~/.npm #ubicacion de nuestro directorio
+node_js: 
+  - "12" #version de node
+git:
+  depth: 3 #leer hasta el tercer nivel
+script:
+  - yarn build #comando a ejecutar nuestro proyecto
+deploy:
+  provider: pages #donde va estar alojado
+  edge: true #control de versiones
+  skip-cleanup: true #estructura de compilaciones
+  keep-history: true #historial
+  github-token: $GITHUB_TOKEN #nuestro token generado
+  local-dir: build/ #directorio sobre el cual vamos a trabajar
+  target-branch: gh-pages
+  commit_message: "Deploy Release" #nombre al commint
+  on:
+    branch: master #rama sobre la que actuara
