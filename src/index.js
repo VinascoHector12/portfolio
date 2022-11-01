@@ -6,6 +6,7 @@ import App from './App';
 //import Swiper from 'swiper';
  // import Swiper styles
 import 'swiper/css';
+import $ from 'jquery';
 
 
 const navMenu = document.getElementById('nav-menu');
@@ -189,7 +190,17 @@ themeButton.addEventListener('click', () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem('selected-theme', getCurrentTheme());
   localStorage.setItem('selected-icon', getCurrentIcon());
-})
+});
+
+/*Reset title*/
+$(document).ready(() => {
+  let typingElement = $('.typing');
+
+  typingElement.on('click', (e) => {
+    typingElement.removeClass('animate');
+    setTimeout(() => typingElement.addClass('animate'), 1);
+  })
+});
 
 ReactDOM.render(
   <App />,
