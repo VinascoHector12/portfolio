@@ -1,6 +1,7 @@
 language: node_js #establecer lenguaje
 cache:
   directories:
+    - node_modules
     - ~/.npm #ubicacion de nuestro directorio
 node_js: 
   - "12" #version de node
