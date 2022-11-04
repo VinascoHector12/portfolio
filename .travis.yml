@@ -8,6 +8,7 @@ node_js:
 git:
   depth: 3 #leer hasta el tercer nivel
 script:
+  - npm install
   - yarn build #comando a ejecutar nuestro proyecto
 deploy:
   provider: pages #donde va estar alojado
