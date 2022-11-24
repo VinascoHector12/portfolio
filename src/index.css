@@ -713,6 +713,7 @@ img{
 }
 
 .services__content{
+  cursor: pointer;
   position: relative;
   background-color: var(--container-color);
   padding: 2.5rem .5rem 1.5rem 1.5rem;
