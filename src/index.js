@@ -40,11 +40,9 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
 
-/* -- ACCORDOTION SKILLS -- */
+/* -- ACCORDION SKILLS -- */
 const skillsContent = document.getElementsByClassName('skills__content');
 const skillsHeader = document.querySelectorAll('.skills__header');
-console.log(skillsContent);
-console.log(skillsHeader);
 
 function toggleSkills(){
   let itemClass = this.parentNode.className;
@@ -85,7 +83,7 @@ tabs.forEach(tab => {
 
 /* -- SERVICES MODAL -- */
 const modalViews = document.querySelectorAll('.services__modal');
-const modalBtns = document.querySelectorAll('.services__button');
+const modalBtns = document.querySelectorAll('.services__content');
 const modalCloses = document.querySelectorAll('.services__modal-close');
 
 let modal = function(modalClick){
