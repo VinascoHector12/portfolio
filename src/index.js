@@ -40,11 +40,9 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
 
-/* -- ACCORDOTION SKILLS -- */
+/* -- ACCORDION SKILLS -- */
 const skillsContent = document.getElementsByClassName('skills__content');
 const skillsHeader = document.querySelectorAll('.skills__header');
-console.log(skillsContent);
-console.log(skillsHeader);
 
 function toggleSkills(){
   let itemClass = this.parentNode.className;

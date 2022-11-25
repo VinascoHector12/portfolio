@@ -536,7 +536,7 @@ img{
 
 .skills__arrow{
   margin-left: auto;
-  transition: .4s;
+  transition: 1s;
 }
 
 .skills__list{
@@ -618,20 +618,23 @@ img{
 }
 
 .skills__close .skills__list{
-  height: 0;
+  max-height: 0;
   overflow: hidden;
-  transition: .5s;
+  transition: all 1s ease-in-out;
 }
 
 .skills__open .skills__list{
-  height: max-content;
+  /*height: max-content;*/
+  max-height: 300px;
+  /*height: 300px;*/
   margin-bottom: var(--mb-2);
-  transition: .5s;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
 }
 
 .skills__open .skills__arrow{
   transform: rotate(-180deg);
-  transition: .5s;
+  transition: 1s;
 }
 
 /* -- Qualification -- */
